@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>doc-and-win test suite</title>
+		<link rel="stylesheet" href="lib/qunit/testsuite.css" type="text/css" media="screen" charset="utf-8">
+		<script src="lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/qunit/testrunner.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../jquery.doc-and-win.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			test("doc", function() {
+				equals( $('iframe').doc()[0], $('iframe').contents()[0] );
+				equals( $('#foo').doc()[0], document );
+				equals( $(document).doc()[0], document );
+				equals( $(window).doc()[0], document );
+				
+				equals( $('iframe').doc().find('span').length, 1 );
+			});
+			
+			test("win", function() {
+				equals( $('iframe').win()[0], $('iframe')[0].contentWindow );
+				equals( $('#foo').win()[0], window );
+				equals( $(document).win()[0], window );
+				equals( $(window).win()[0], window );
+			});
+		</script>
+	</head>
+	<body>
+		<h1 id="header">jQuery Test Suite</h1>
+		<h2 id="banner"></h2>
+		<h2 id="userAgent"></h2>
+		
+		<iframe id="loadediframe" name="loadediframe" style="display:none;" src="data/iframe.html"></iframe>
+		<div id="main" style="display: none;">
+			<p id="foo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+		
+		<ol id="tests"></ol>
+	</body>
+</html>
