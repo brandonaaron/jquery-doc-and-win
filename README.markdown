@@ -4,6 +4,8 @@ A jQuery plugin that adds two helper methods to retrieve the window and document
 
 Both the `.doc()` and `.win()` methods return the document or window for each matched element.
 
+This plugin will be best used with jQuery 1.3.3+ which has better support for other windows and documents.
+
 ## Examples
 
     $('iframe').doc() // iframe document
