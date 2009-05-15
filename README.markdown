@@ -14,6 +14,14 @@ Both the `.doc()` and `.win()` methods return the document or window for each ma
 
     $('iframe').doc().find('a').doc() // iframe document
 
+    $('p').doc() // return parent document
+    $('p').win() // return parent window
+
+    $(document).doc() // return document
+    $(document).win() // return document.defaultView || document.parentWindow
+
+    $(window).doc() // return window.document
+    $(window).win() // return window
 
 ## License
 
